@@ -51,4 +51,34 @@ app.post("/upload", upload.single("imagen"), (req, res) => {
 
 
 
-app.listen(PUERTO);
+const httpServer = app.listen(PUERTO);
+
+//Socket.io:
+
+//1) Instalamos con el comando: npm install socket.io
+//2) Lo importamos.
+
+const socket = require("socket.io");
+
+//3) Me guardo una referencia de mi servidor (httpServer)
+//4) Configuramos socket.io: 
+
+const io = socket(httpServer);
+
+//5) Configuramos el primer evento, que es el "connection":
+
+io.on("connection", (socket) => {
+    console.log("Un cliente se conecto");
+
+    socket.on("mensaje", (data) => {
+        console.log(data);
+        io.sockets.emit("mensaje", data);
+    })
+
+    //Ahora el servidor le va a enviar un mensaje al cliente. 
+
+    socket.emit("saludito", "Hola cliente, ¿cómo estas?");
+})
+
+
+
