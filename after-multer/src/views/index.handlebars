@@ -1,0 +1,13 @@
+<h1>Formulario para cargar imagenes</h1>
+
+<form action="/" method="POST" enctype="multipart/form-data">
+    <input type="file" name="imagen">
+    <input type="submit" value="Cargar Foto">
+</form>
+
+{{!-- name = debe coincidir con al key que tenemos en la app.js --}}
+{{!-- method = "POST" configuramos el método post para enviar datos al servidor.  --}}
+{{!-- enctype="multipart/form-data" este atributo le dice al sistema como se van a codificar los datos del formulario antes de enviarlo al servidor.  --}}
+{{!-- action="/" especifica la url o la ruta del servidor donde se enviarán los datos del formulario  --}}
+
+
