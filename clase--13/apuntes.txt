@@ -1,0 +1,14 @@
+$set: este operador lo vamos a usar para establecer el valor de un campo. 
+Puedo agregar un nuevo campo  o actualizar uno que ya existe. 
+
+$unset: este operador lo voy a usar para eliminar un campo especifico. 
+
+$inc: lo usamos para incrementar o decrementar el valor numero de un campo. 
+
+$rename: este operador me permite renombrar un campo en un determiando documento. 
+
+$mul: lo usamos para multiplicar el valor de un campo. 
+
+$min: actualizamos un valor de un campo si el valor nuevo es menor al actual. 
+
+$max: actualizamos el valor de un campo si el nuevo es mayor al valor actual. 
