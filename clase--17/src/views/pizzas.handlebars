@@ -1,0 +1,14 @@
+<h1>Listado de Pizzas pedidas el finde </h1>
+<ul>
+    {{#each pizzas }}
+        <li> {{this.nombre}} </li>
+    {{/each}}
+</ul>
+{{#if hasNextPage}}
+    <a href="/pizzas?page={{nextPage}}"> Siguiente </a>
+{{/if}} 
+{{#if hasPrevPage}}
+    <a href="/pizzas?page={{prevPage}}"> Anterior </a>
+{{/if}}
+
+<p>Pagina {{currentPage}} de {{totalPages}} </p>
