@@ -55,17 +55,17 @@ class CartManager {
                 throw new Error('Carrito no encontrado');
             }
 
-
-            cart.products = cart.products.filter(item => item.product.toString() !== productId);
+            //cart.products = cart.products.filter(item => item.product.toString() !== productId);
+            cart.products = cart.products.filter(item => item.product._id.toString() !== productId);
 
             await cart.save();
-
             return cart;
         } catch (error) {
             console.error('Error al eliminar el producto del carrito en el gestor', error);
             throw error;
         }
     }
+
 
     async actualizarCarrito(cartId, updatedProducts) {
         try {
@@ -96,7 +96,7 @@ class CartManager {
                 throw new Error('Carrito no encontrado');
             }
 
-            const productIndex = cart.products.findIndex(item => item.product.toString() === productId);
+            const productIndex = cart.products.findIndex(item => item.product._id.toString() === productId);
 
             if (productIndex !== -1) {
                 cart.products[productIndex].quantity = newQuantity;
