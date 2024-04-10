@@ -1,10 +1,9 @@
 {
-  "name": "clase--30",
+  "name": "clase--31",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/app.js"
   },
   "keywords": [],
@@ -14,9 +13,7 @@
     "nodemon": "^3.1.0"
   },
   "dependencies": {
-    "express": "^4.19.2",
-    "express-handlebars": "^7.1.2",
-    "nodemailer": "^6.9.13",
-    "twilio": "^5.0.2"
+    "@faker-js/faker": "^8.4.1",
+    "express": "^4.19.2"
   }
 }
