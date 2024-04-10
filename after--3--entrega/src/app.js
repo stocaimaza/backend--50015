@@ -4,6 +4,8 @@ const exphbs = require("express-handlebars");
 const cookieParser = require("cookie-parser");
 const passport = require("passport");
 const initializePassport = require("./config/passport.config.js");
+const cors = require("cors");
+const path = require('path');
 const PUERTO = 8080;
 require("./database.js");
 
@@ -15,21 +17,24 @@ const userRouter = require("./routes/user.router.js");
 //Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("./src/public"));
+//app.use(express.static("./src/public"));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors());
 
 //Passport 
-app.use(cookieParser());
 app.use(passport.initialize());
 initializePassport();
+app.use(cookieParser());
+
+//AuthMiddleware
+const authMiddleware = require("./middleware/authmiddleware.js");
+app.use(authMiddleware);
 
 //Handlebars
 app.engine("handlebars", exphbs.engine());
 app.set("view engine", "handlebars");
 app.set("views", "./src/views");
 
-//AuthMiddleware
-const authMiddleware = require("./middleware/authmiddleware.js");
-app.use(authMiddleware);
 
 //Rutas: 
 app.use("/api/products", productsRouter);
@@ -44,3 +49,4 @@ const httpServer = app.listen(PUERTO, () => {
 ///Websockets: 
 const SocketManager = require("./sockets/socketmanager.js");
 new SocketManager(httpServer);
+

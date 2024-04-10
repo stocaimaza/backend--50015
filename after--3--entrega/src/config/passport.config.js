@@ -2,7 +2,7 @@ const passport = require("passport");
 const jwt = require("passport-jwt");
 const JWTStrategy = jwt.Strategy;
 const ExtractJwt = jwt.ExtractJwt;
-const UserModel = require("../models/user.model");
+const UserModel = require("../models/user.model.js");
 
 const initializePassport = () => {
     passport.use("jwt", new JWTStrategy({

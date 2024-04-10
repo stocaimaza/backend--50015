@@ -27,9 +27,9 @@ class ViewsController {
                 return { id: _id, ...rest }; // Agregar el ID al objeto
             });
 
-            
+
             const cartId = req.user.cart.toString();
-            console.log(cartId);
+            //console.log(cartId);
 
             res.render("products", {
                 productos: nuevoArray,
@@ -61,13 +61,25 @@ class ViewsController {
                 return res.status(404).json({ error: "Carrito no encontrado" });
             }
 
-            const productosEnCarrito = carrito.products.map(item => ({
-                product: item.product.toObject(),
-                quantity: item.quantity
-            }));
 
+            let totalCompra = 0;
 
-            res.render("carts", { productos: productosEnCarrito });
+            const productosEnCarrito = carrito.products.map(item => {
+                const product = item.product.toObject();
+                const quantity = item.quantity;
+                const totalPrice = product.price * quantity;
+
+                
+                totalCompra += totalPrice;
+
+                return {
+                    product: { ...product, totalPrice },
+                    quantity,
+                    cartId
+                };
+            });
+
+            res.render("carts", { productos: productosEnCarrito, totalCompra, cartId });
         } catch (error) {
             console.error("Error al obtener el carrito", error);
             res.status(500).json({ error: "Error interno del servidor" });
