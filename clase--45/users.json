@@ -1,0 +1,82 @@
+[
+    {
+        "first_name": "Mirtha",
+        "last_name": "Legrand",
+        "email": "lachiqui@legrand.com",
+        "password": "1234",
+        "role": "user",
+        "pets": []
+    },
+    {
+        "first_name": "Pepe",
+        "last_name": "Argento",
+        "email": "pepe@garmendiazapatos.com",
+        "password": "$2b$10$DpScErHWcFr8iImrvzBjyeGYttQasS.sfDHRn68L9CCJLdf6jvND2",
+        "role": "user",
+        "pets": []
+    },
+    {
+        "first_name": "Marge",
+        "last_name": "Simpson",
+        "email": "marge@example.com",
+        "password": "password123",
+        "role": "user",
+        "pets": []
+    },
+    {
+        "first_name": "Homer",
+        "last_name": "Simpson",
+        "email": "homer@example.com",
+        "password": "password123",
+        "role": "user",
+        "pets": []
+    },
+    {
+        "first_name": "Bart",
+        "last_name": "Simpson",
+        "email": "bart@example.com",
+        "password": "password123",
+        "role": "user",
+        "pets": []
+    },
+    {
+        "first_name": "Lisa",
+        "last_name": "Simpson",
+        "email": "lisa@example.com",
+        "password": "password123",
+        "role": "user",
+        "pets": []
+    },
+    {
+        "first_name": "Maggie",
+        "last_name": "Simpson",
+        "email": "maggie@example.com",
+        "password": "password123",
+        "role": "user",
+        "pets": []
+    },
+    {
+        "first_name": "Ned",
+        "last_name": "Flanders",
+        "email": "ned@example.com",
+        "password": "password123",
+        "role": "user",
+        "pets": []
+    },
+    {
+        "first_name": "Moe",
+        "last_name": "Szyslak",
+        "email": "moe@example.com",
+        "password": "password123",
+        "role": "user",
+        "pets": []
+    },
+    {
+        "first_name": "Montgomery",
+        "last_name": "Burns",
+        "email": "monty@example.com",
+        "password": "password123",
+        "role": "user",
+        "pets": []
+    }
+]

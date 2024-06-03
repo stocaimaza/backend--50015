@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Ecommerce</title>
+    <!-- SDK de MercadoPago -->
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1> Integración MercadoPago </h1>
+
+    <div class="card"> 
+        <img src="patito.jpg" alt="Patito de Goma">
+        <h2> Patito de Goma </h2>
+        <p> Precio: $100 </p>
+        <button id="checkout-btn"> Comprar </button>
+        <div id="wallet_container"></div>
+    </div>
+
+    <!-- Tenemos que colocar un div wallter container en donde se va a renderizar el btn de pago con MP -->
+    
+    <script src="script.js"></script>
+</body>
+</html>
